@@ -1,7 +1,9 @@
-from django.shortcuts import render
-from .models import *
-from django.http import JsonResponse
 import json
+
+from django.http import JsonResponse
+from django.shortcuts import render
+
+from .models import *
 
 
 def store(request):
@@ -12,7 +14,7 @@ def store(request):
         cartItems = order.get_cart_items
     else:
         items = []
-        order = {'get_cart_total':0, 'get_cart_items':0}
+        order = {'get_cart_total': 0, 'get_cart_items': 0}
         cartItems = order['get_cart_items']
 
     products = Product.objects.all()
@@ -71,7 +73,7 @@ def updateItem(request):
         orderItem.quantity = (orderItem.quantity - 1)
 
     orderItem.save()
-    if orderItem.quantity <=0:
+    if orderItem.quantity <= 0:
         orderItem.delete()
 
     return JsonResponse('Item was added', safe=False)
