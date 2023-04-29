@@ -1,4 +1,4 @@
-Online store selling Apple products.
+Online store selling Apple products (unfinished)
 
 ![1](https://user-images.githubusercontent.com/109224340/235328230-fa028029-5ec3-44f6-9763-c77ef1d55cdc.png)
 
